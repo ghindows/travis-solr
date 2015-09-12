@@ -4,5 +4,5 @@ php:
    - 5.6
 
 before_script: 
-   - set SOLR_VERSION=5.2.0
-   - bash travis-solr.sh
+   - export SOLR_VERSION="5.2.0"
+   - bash travis-solr5.sh
