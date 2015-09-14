@@ -15,7 +15,7 @@ export SOLR_ARCHIVE="${SOLR_NAME}.tgz"
 
 
 #if $SOLR_DIR not exist then try to download solr and extrat 
-if [ -d $SOLR_DIR ]; then 
+if [ ! -e $SOLR_DIR ]; then 
 
     if [ -d "${HOME}/download-cache/" ]; then
         export SOLR_ARCHIVE="${HOME}/download-cache/${SOLR_ARCHIVE}"
