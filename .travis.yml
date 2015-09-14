@@ -20,6 +20,3 @@ script:
    - export $SOLR_CONFIGSET="default"
    - bash ./solr5-addcore.sh
    - bash ./solr5-stop.sh
-
-notifications:
-	email: false
