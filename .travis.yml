@@ -3,6 +3,29 @@ language: php
 php:
    - 5.6
 
-before_script: 
-   - export SOLR_VERSION="5.2.0"
-   - bash ./travis-solr5.sh
+cache:
+    apt: true
+    pip: true
+    directories:
+        - $HOME/download-cache
+
+before_install:
+    - mkdir -p $HOME/download-cache
+
+before_script:
+   - export SOLR_VERSION="5.1.0"
+   - bash ./solr5-install.sh
+
+script:
+   - export $SOLR_CORENAME="cbtest_log"
+   - export $SOLR_CONFIGSET="log"
+   - bash ./solr5-addcore.sh
+   - export $SOLR_CORENAME="cbtest_test"
+   - export $SOLR_CONFIGSET="test"
+   - bash ./solr5-addcore.sh
+
+after_script:
+  - bash ./solr5-stop.sh
+
+notifications:
+	email: false
