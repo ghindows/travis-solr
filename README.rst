@@ -56,7 +56,7 @@ SOLR_CONFIGSET:
 Select the configset for cores, by default "basic"
 
 
-solr5-addcore.sh
+solr5-stop.sh
 ==============
 
 Stop Solr instance
