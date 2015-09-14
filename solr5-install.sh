@@ -8,7 +8,7 @@ export SOLR_VERSION=${SOLR_VERSION:-5.1.0}
 export SOLR_NAME="solr-$SOLR_VERSION"
 export SOLR_DIR="`pwd`/${SOLR_NAME}"
 export SOLR_PORT=${SOLR_PORT:-8983}
-export SOLR_SOURCE_URL="http://www.us.apache.org/dist/lucene/solr/${SOLR_VERSION}/${SOLR_NAME}.tgz"
+export SOLR_SOURCE_URL="http://archive.apache.org/dist/lucene/solr/${SOLR_VERSION}/${SOLR_NAME}.tgz"
 
 export SOLR_ARCHIVE="${SOLR_NAME}.tgz"
 
