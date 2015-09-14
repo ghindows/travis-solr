@@ -15,6 +15,5 @@ echo "Changing dir into ${SOLR_DIR}"
 cd $SOLR_DIR 
 
 export CMD="bin/solr stop -p ${SOLR_PORT}"
-
 echo "Stop server on port ${SOLR_PORT}"
 exec $CMD

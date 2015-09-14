@@ -7,10 +7,9 @@ cd $(dirname $0)
 export SOLR_VERSION=${SOLR_VERSION:-5.1.0}
 export SOLR_NAME="solr-$SOLR_VERSION"
 export SOLR_DIR="`pwd`/${SOLR_NAME}"
-export SOLR_USER=$USER
 export SOLR_PORT=${SOLR_PORT:-8983}
 
-export SOLR_CONFIGSET=${SOLR_CONFIGSET:-default}
+export SOLR_CONFIGSET=${SOLR_CONFIGSET:-basic}
 
 echo "Waiting solr to launch on ${SOLR_PORT}..."
 
