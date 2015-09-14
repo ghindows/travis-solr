@@ -28,12 +28,12 @@ if [ ! -e $SOLR_DIR ]; then
 
 
     if [ ! -f ${SOLR_ARCHIVE} ]; then
-        echo "Download ${SOLR_NAME} from ${SOLR_SOURCE}"
+        echo "Download ${SOLR_NAME} from ${SOLR_SOURCE_URL}"
         curl -Lo $SOLR_ARCHIVE $SOLR_SOURCE_URL
     # wget -nv --output-document=`pwd`/$SOLR.tgz $SOLR_SOURCE_URL
     fi
 
-    echo "Extracting Solr ${SOLR_VERSION} to ${SOLR_DIR}"
+    echo "Extracting Solr ${SOLR_ARCHIVE} to ${SOLR_DIR}"
 
     tar -xf $SOLR_ARCHIVE
 
