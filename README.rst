@@ -1,3 +1,16 @@
+travis-solr
+==============
+
+Example how to get and install Apache solr5 for your tests on https://travis-ci.org/ 
+
+
+Code status
+-----------
+
+.. image:: https://travis-ci.org/ghindows/travis-solr.svg?branch=master
+    :alt: Build status
+    :target: https://travis-ci.org/ghindows/travis-solr
+
 solr5-install.sh
 ==============
 
