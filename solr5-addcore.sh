@@ -11,11 +11,22 @@ export SOLR_PORT=${SOLR_PORT:-8983}
 
 export SOLR_CONFIGSET=${SOLR_CONFIGSET:-basic}
 
-echo "Waiting solr to launch on ${SOLR_PORT}..."
+solr_responding() {
+  port=$1
+  curl -o /dev/null "http://localhost:$port/solr/admin/ping" > /dev/null 2>&1
+}
 
-while ! nc -z localhost $SOLR_PORT; do   
-  sleep 0.1 # wait for 1/10 of the second before check again
-done
+wait_until_solr_responds() {
+  port=$1
+  while ! solr_responding $1; do
+    /bin/echo -n "."
+    sleep 1
+  done
+}
+
+
+echo "Waiting solr to launch on ${SOLR_PORT}..."
+wait_until_solr_responds $SOLR_PORT
 
 
 if [ -n "$SOLR_CORENAME" ]; then
