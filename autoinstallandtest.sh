@@ -24,4 +24,4 @@ bash ./solr5-addcore.sh
 vendor/bin/phpunit Test.php
 
 #stop solr 
-#bash solr5-stop.sh
+bash solr5-stop.sh

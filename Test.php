@@ -13,7 +13,7 @@ class Test extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->solr = $solr = new \Apache_Solr_Service($this->config['solr_host'], $this->config['solr_port'], "/solr/".$this->config['solr_core']."/");
+        $this->solr = $solr = new \Apache_Solr_Service($this->config['solr_host'], $this->config['solr_port'], "/solr/".$this->config['solr_core']."/",true,true);
 
     }
 
@@ -22,6 +22,14 @@ class Test extends PHPUnit_Framework_TestCase
         $this->assertTrue(is_numeric($this->solr->ping()));
     }
 
+
+    public function testAddDocument() {
+        $this->assertTrue(true);
+    }
+
+    public function testQuery() {
+        $this->assertTrue(true);
+    }
     
 }
 
