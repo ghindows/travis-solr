@@ -1,0 +1,7 @@
+{
+  "require": {
+    "phpunit/phpunit": "4.6.*",
+    "phpunit/phpunit-story": ">=1.0",
+    "reprovinci/solr-php-client": "1.0.x"
+  }
+}
