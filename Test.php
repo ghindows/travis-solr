@@ -13,7 +13,7 @@ class Test extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->solr = $solr = new \Apache_Solr_Service($this->config['solr_host'], $this->config['solr_port'], "/solr/".$this->config['solr_core']."/",true,true);
+        $this->solr = $solr = new \Apache_Solr_Service($this->config['solr_host'], $this->config['solr_port'], "/solr/".$this->config['solr_core']."/");
 
     }
 
