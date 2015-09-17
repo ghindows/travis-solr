@@ -30,7 +30,13 @@ class Test extends PHPUnit_Framework_TestCase
 
 
     public function testAddDocument() {
-        $this->assertTrue(true);
+        $doc = new Apache_Solr_Document();
+        $doc->id = 1;
+        $doc->name="test";
+        $doc->dstatus = 0;
+        $response = $this->solr->addDocument($doc);
+
+        $this->assertTrue($response->getHttpStatus() == '200', "ERROR:".var_dump($response));
     }
 
     public function testQuery() {
