@@ -15,14 +15,12 @@ before_script:
    - mkdir -p $HOME/download-cache
    - export SOLR_VERSION="5.1.0"
    - bash ./solr5-install.sh
-   - export SOLR_CORENAME="cbtest_log"
-   - export SOLR_CONFIGSET="log"
-   - bash ./solr5-addcore.sh
    - export SOLR_CORENAME="cbtest_test"
    - export SOLR_CONFIGSET="default"
    - bash ./solr5-addcore.sh
 
-script: phpunit Test.php
+script:
+   - vendor/bin/phpunit Test.php
 
 after_script:
    - bash ./solr5-stop.sh
