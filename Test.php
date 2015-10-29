@@ -14,7 +14,7 @@ class Test extends PHPUnit_Framework_TestCase
     private $solr;
     private $config = [
         'solr_host' => 'localhost',
-        'solr_port' => 8983,
+        'solr_port' => 8180,
         'solr_core' => 'cbtest_test'
     ];
 

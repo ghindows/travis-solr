@@ -4,7 +4,7 @@ set -e
 
 cd $(dirname $0)
 
-if [ !-f "composer.phar" ]; then 
+if [ ! -f "composer.phar" ]; then 
 curl -sS https://getcomposer.org/installer | php
  fi
 
@@ -17,6 +17,11 @@ bash ./solr5-install.sh
 #create cores
 export SOLR_CORENAME="cbtest_test"
 export SOLR_CONFIGSET="default"
+bash ./solr5-addcore.sh
+
+#create cores
+export SOLR_CORENAME="cbtest_log"
+export SOLR_CONFIGSET="log"
 bash ./solr5-addcore.sh
 
 #vendor/bin/phpunit vendor/reprovinci/solr-php-client/tests
