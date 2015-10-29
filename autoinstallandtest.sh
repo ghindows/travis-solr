@@ -4,6 +4,8 @@ set -e
 
 cd $(dirname $0)
 
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 if [ ! -f "composer.phar" ]; then 
 curl -sS https://getcomposer.org/installer | php
  fi
@@ -32,4 +34,7 @@ vendor/bin/phpunit Test.php
 #stop solr 
 bash solr5-stop.sh
 
+
+sleep 10
+echo "remove directory ${DIR}/solr-${SOLR_VERSION}"
 rm -rf "${DIR}/solr-${SOLR_VERSION}"
