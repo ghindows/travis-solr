@@ -11,7 +11,7 @@ curl -sS https://getcomposer.org/installer | php
 #install dependencies 
 php composer.phar install --dev
 #install solr
-export SOLR_VERSION="5.1.0"
+export SOLR_VERSION="5.2.0"
 bash ./solr5-install.sh
 
 #create cores
