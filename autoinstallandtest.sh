@@ -12,6 +12,7 @@ curl -sS https://getcomposer.org/installer | php
 php composer.phar install --dev
 #install solr
 export SOLR_VERSION="5.2.0"
+export SOLR_PORT="8180"
 bash ./solr5-install.sh
 
 #create cores
@@ -30,3 +31,5 @@ vendor/bin/phpunit Test.php
 
 #stop solr 
 bash solr5-stop.sh
+
+rm -rf "${DIR}/solr-${SOLR_VERSION}"
