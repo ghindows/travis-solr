@@ -24,4 +24,4 @@ script:
    - vendor/bin/phpunit Test.php
 
 after_script:
-   - bash ./solr5,sh --stop
+   - bash ./solr5.sh --stop
