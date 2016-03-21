@@ -102,25 +102,22 @@ exec $CMD
 
 }
 
-while [[ $# > 1 ]]
+while [[ $# -ge 1 ]]
 do
 key="$1"
 
 case $key in
     --install)
     solr_install
-    shift # past argument
     ;;
     --addcore)
     solr_addcore
-    shift # past argument
     ;;
     --stop)
     solr_stop
-    shift # past argument
     ;;
     *)
-         # unknown option
+     echo $key    # unknown option
     ;;
 esac
 shift # past argument or value
