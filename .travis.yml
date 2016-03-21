@@ -13,11 +13,11 @@ install:
 
 before_script:
    - mkdir -p $HOME/download-cache
-   - export SOLR_VERSION="5.2.0"
+   - export SOLR_VERSION="5.5.0"
    - export SOLR_PORT="8180"
    - bash ./solr5-install.sh
    - export SOLR_CORENAME="cbtest_test"
-   - export SOLR_CONFIGSET="default"
+   - export SOLR_CONFIGSET="/server/solr/configsets/default_configs/conf"
    - bash ./solr5-addcore.sh
 
 script:

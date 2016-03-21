@@ -1,7 +1,9 @@
 {
   "require": {
-    "phpunit/phpunit": "4.6.*",
-    "phpunit/phpunit-story": ">=1.0",
-    "reprovinci/solr-php-client": "1.0.x"
+    "phpunit/phpunit": "^5.2.12",
+    "phpunit/php-code-coverage": "^3.3.0",
+    "satooshi/php-coveralls": "2.*",
+    "phpunit/phpcov": "2.*",
+    "reprovinci/solr-php-client": "* v1.0.3"
   }
 }

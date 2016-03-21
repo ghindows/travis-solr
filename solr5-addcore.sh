@@ -4,10 +4,10 @@ set -e
 
 cd $(dirname $0)
 
-export SOLR_VERSION=${SOLR_VERSION:-5.2.0}
+export SOLR_VERSION=${SOLR_VERSION:-5.5.0}
 export SOLR_NAME="solr-$SOLR_VERSION"
 export SOLR_DIR="`pwd`/${SOLR_NAME}"
-export SOLR_PORT=${SOLR_PORT:-8180}
+export SOLR_PORT=${SOLR_PORT:-8983}
 
 export SOLR_CONFIGSET=${SOLR_CONFIGSET:-basic}
 
@@ -35,10 +35,8 @@ for CORENAME in $SOLR_CORENAME
 do
 # create core folder 
    mkdir -p "${SOLR_DIR}/server/solr/${CORENAME}/"
-   # ln -s  "${SOLR_DIR}/server/solr/configsets/${SOLR_CONFIGSET}_configs/conf" "${SOLR_DIR}/server/solr/${CORENAME}/conf"
-   cp -ar  "${SOLR_DIR}/server/solr/configsets/${SOLR_CONFIGSET}_configs/conf" "${SOLR_DIR}/server/solr/${CORENAME}/"
-#   export CMD="${SOLR_DIR}/bin/solr create_core -c ${CORENAME}"
-     echo "Configuring Core named ${CORENAME}"
+   cp -ar  "${SOLR_DIR}${SOLR_CONFIGSET}" "${SOLR_DIR}/server/solr/${CORENAME}/"
+   echo "Configuring Core named ${CORENAME}"
     #exec $CMD
     curl -o /dev/null "http://localhost:${SOLR_PORT}/solr/admin/cores?action=CREATE&name=${CORENAME}&instanceDir=${CORENAME}" > /dev/null 2>&1
 done
